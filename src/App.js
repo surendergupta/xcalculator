@@ -8,6 +8,9 @@ function App() {
   const handleCalculate = (e) => {
     e.preventDefault();
     try {
+      if(input.length === 0) {
+        throw new Error("Invalid calculation");
+      }
       const evaluatedResult = evaluateExpression(input);
       setResult(evaluatedResult);
     } catch (error) {
